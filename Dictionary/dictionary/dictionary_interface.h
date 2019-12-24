@@ -9,4 +9,5 @@ public:
 	virtual const TValue& Get(const TKey& key) const = 0;
 	virtual void Set(const TKey& key, const TValue& value) = 0;
 	virtual bool IsSet(const TKey& key) const = 0;
+	virtual void Remove(const TKey& key) = 0;
 };

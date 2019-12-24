@@ -9,12 +9,15 @@ int main()
 
 	dictionary.Set("id", 100);
 
-	const std::string key = "classname";
+	const std::string key = "id";
 
 	try
 	{
 		int value = dictionary.Get(key);
 		std::cout << "Value with key = " << key << " equal " << value << std::endl;
+
+		dictionary.Remove(key);
+		value = dictionary.Get(key);
 	}
 	catch (const MyNotFoundException<std::string>& e)
 	{

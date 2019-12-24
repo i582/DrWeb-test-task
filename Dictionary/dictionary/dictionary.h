@@ -19,6 +19,7 @@ public:
 	const TValue& Get(const TKey& key) const;
 	void Set(const TKey& key, const TValue& value);
 	bool IsSet(const TKey& key) const;
+	void Remove(const TKey& key);
 
 };
 
@@ -45,4 +46,17 @@ template<typename TKey, typename TValue>
 bool MyDictionary<TKey, TValue>::IsSet(const TKey& key) const
 {
 	return _dictionary.find(key) != _dictionary.end();
+}
+
+template<typename TKey, typename TValue>
+void MyDictionary<TKey, TValue>::Remove(const TKey& key)
+{
+	if (IsSet(key))
+	{
+		_dictionary.erase(key);
+	}
+	else
+	{
+		throw MyNotFoundException<TKey>(key);
+	}
 }
