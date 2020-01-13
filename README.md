@@ -1,4 +1,4 @@
-# Dictionary — test task for DrWeb for Junior C ++ position
+# Dictionary — test task for DrWeb for Junior C++ position
 
 A simple wrapper class over a standard map with the following interface:
 
@@ -55,5 +55,3 @@ public:
 1. [`component-sdl2`](https://github.com/i582/component-sdl2) — небольшая библиотека для создания интерфейсов с возможностью настраивать стили компонентов с помощью `css`.
 
 2. [`table-winapi`](https://github.com/i582/HLProgramming/tree/new/4/tables-1/tables-1) — небольшая абстракция для таблиц в `WinAPI` и некоторых других вещей, а так же работа с `CSV`.
-
-3. [`drawing-winapi`](https://github.com/i582/HLProgramming/tree/new/3/Graph/Graph/modules) — рисование графиков из точек, использование паттернов `Memento` и `Command`.
