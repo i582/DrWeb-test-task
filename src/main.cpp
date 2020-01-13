@@ -21,9 +21,9 @@ int main()
 	}
 	catch (const MyNotFoundException<std::string>& e)
 	{
-		auto key = e.GetKey();
+		const auto& result_key = e.GetKey();
 
-		std::cout << "Error! Key \"" << key << "\" not found!" << std::endl;
+		std::cout << "Error! Key \"" << result_key << "\" not found!" << std::endl;
 	}
 
 	return 0;
