@@ -4,7 +4,7 @@
 
 TEST(DictionaryTest, test_SetGet)
 {
-    MyDictionary<std::string, int> dictionary;
+    Dictionary<std::string, int> dictionary;
 
     const int testValue = 100;
 
@@ -17,7 +17,7 @@ TEST(DictionaryTest, test_SetGet)
 
 TEST(DictionaryTest, test_IsSet)
 {
-    MyDictionary<std::string, int> dictionary;
+    Dictionary<std::string, int> dictionary;
 
     const int testValue = 100;
 
@@ -30,7 +30,7 @@ TEST(DictionaryTest, test_IsSet)
 
 TEST(DictionaryTest, test_Remove)
 {
-    MyDictionary<std::string, int> dictionary;
+    Dictionary<std::string, int> dictionary;
 
     const int testValue = 100;
 
@@ -38,18 +38,5 @@ TEST(DictionaryTest, test_Remove)
 
     dictionary.Remove("id");
 
-
-    bool error_was_caught = false;
-
-    try
-    {
-        dictionary.Get("id");
-    }
-    catch (const MyNotFoundException<std::string>& e)
-    {
-        error_was_caught = true;
-    }
-
-
-    EXPECT_EQ(error_was_caught, true);
+    EXPECT_ANY_THROW(dictionary.Get("id"););
 }

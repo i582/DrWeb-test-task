@@ -5,7 +5,7 @@
 
 int main()
 {
-	MyDictionary<std::string, int> dictionary;
+    Dictionary<std::string, int> dictionary;
 
 	dictionary.Set("id", 100);
 
@@ -19,11 +19,11 @@ int main()
 		dictionary.Remove(key);
 		value = dictionary.Get(key);
 	}
-	catch (const MyNotFoundException<std::string>& e)
+	catch (const NotFoundException<std::string>& e)
 	{
-		const auto& result_key = e.GetKey();
+		const auto& errorKey = e.GetKey();
 
-		std::cout << "Error! Key \"" << result_key << "\" not found!" << std::endl;
+		std::cout << "Error! Key \"" << errorKey << "\" not found!" << std::endl;
 	}
 
 	return 0;

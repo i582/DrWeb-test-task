@@ -1,19 +1,16 @@
 #pragma once
 #include <map>
 
-#include "dictionary_interface.h"
 #include "notFoundException/notFoundException.h"
 
-using std::map;
-
 template<typename TKey, typename TValue>
-class MyDictionary : public Dictionary<TKey, TValue>
+class Dictionary
 {
 private:
-	map<TKey, TValue> _dictionary;
+	std::map<TKey, TValue> _dictionary;
 
 public:
-	MyDictionary() = default;
+    Dictionary() = default;
 
 public:
 	const TValue& Get(const TKey& key) const;
@@ -24,39 +21,39 @@ public:
 };
 
 template<typename TKey, typename TValue>
-const TValue& MyDictionary<TKey, TValue>::Get(const TKey& key) const
+const TValue& Dictionary<TKey, TValue>::Get(const TKey& key_) const
 {
-	if (IsSet(key))
+	if (IsSet(key_))
 	{ 
-		return _dictionary.at(key);
+		return _dictionary.at(key_);
 	}
 	else
 	{
-		throw MyNotFoundException<TKey>(key);
+		throw NotFoundException<TKey>(key_);
 	}
 }
 
 template<typename TKey, typename TValue>
-void MyDictionary<TKey, TValue>::Set(const TKey& key, const TValue& value)
+void Dictionary<TKey, TValue>::Set(const TKey& key_, const TValue& value_)
 {
-	_dictionary[key] = value;
+	_dictionary[key_] = value_;
 }
 
 template<typename TKey, typename TValue>
-bool MyDictionary<TKey, TValue>::IsSet(const TKey& key) const
+bool Dictionary<TKey, TValue>::IsSet(const TKey& key_) const
 {
-	return _dictionary.find(key) != _dictionary.end();
+	return _dictionary.find(key_) != _dictionary.end();
 }
 
 template<typename TKey, typename TValue>
-void MyDictionary<TKey, TValue>::Remove(const TKey& key)
+void Dictionary<TKey, TValue>::Remove(const TKey& key_)
 {
-	if (IsSet(key))
+	if (IsSet(key_))
 	{
-		_dictionary.erase(key);
+		_dictionary.erase(key_);
 	}
 	else
 	{
-		throw MyNotFoundException<TKey>(key);
+		throw NotFoundException<TKey>(key_);
 	}
 }

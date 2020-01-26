@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.14)
 project(Tests)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
 
-set(PROJECT_NAME Tests)
+set(PROJECT_NAME google_tests_run)
 
 set(SOURCES
     test.cpp
@@ -13,6 +13,6 @@ add_subdirectory(googletest)
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-add_executable(google_tests_run ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES})
 
-target_link_libraries(google_tests_run gtest gtest_main)
+target_link_libraries(${PROJECT_NAME} gtest gtest_main)
