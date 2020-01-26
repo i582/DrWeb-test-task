@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.14)
 project(DrWeb_test_task)
 
 set(PROJECT_NAME DrWeb_test_task)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
 
 enable_testing()
 
@@ -16,7 +16,5 @@ add_subdirectory(test)
 
 add_executable(${PROJECT_NAME}
         src/dictionary/dictionary.h
-        src/dictionary/dictionary_interface.h
         src/notFoundException/notFoundException.h
-        src/notFoundException/notFoundException_interface.h
         src/main.cpp)
