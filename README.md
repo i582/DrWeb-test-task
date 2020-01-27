@@ -35,3 +35,11 @@ Here I will provide some links to my projects for the convenience of transition 
 1. [`component-sdl2`](https://github.com/i582/component-sdl2) — is a small cross-platform library for creating interfaces created on the basis of the low-level graphics library SDL2. It supports the complete customization of the appearance of components using `css`, as well as the simple creation of custom components of any complexity.
 
 2. [`table-winapi`](https://github.com/i582/HLProgramming/tree/new/4/tables-1/tables-1) — a small abstraction for tables in `WinAPI` and some other things, as well as working with `CSV`.
+
+
+## Contact
+Name: Petr Makhnev
+
+E-Mail: mr.makhneff@gmail.com
+
+Telegram: @petr_makhnev
