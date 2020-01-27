@@ -3,15 +3,20 @@
 template<typename TKey>
 class NotFoundException : public std::exception
 {
-private:
-    TKey key;
-
 public:
     explicit NotFoundException(const TKey& key_) noexcept;
     ~NotFoundException() noexcept override = default;
-
+    
 public:
+    /**
+     * @brief The function that returns the key for which an exception was raised.
+     * @return The key for which the exception was thrown.
+     */
     const TKey& GetKey() const noexcept;
+
+
+private:
+    TKey key;
 
 };
 
